@@ -2,6 +2,28 @@
 
 All notable changes to this project are documented here.
 
+## [5.4.0] — 2026-05-27
+
+### Added
+
+- Added a generated cinematic README hero image at `assets/hero-cinematic.png`.
+- Added dated research and source layers: `research-2026-05-27.md`, `platform-surface-matrix.md`, `model-name-map.md`, `first-last-frame-guide.md`, `field-observed-tips.md`, and `community-source-methodology.md`.
+- Added structured source and community-pattern data files under `data/`.
+- Added source freshness and vocabulary schema validators.
+- Added eval cases for model-name accuracy, source freshness, first/last-frame workflow, Chinese/Russian role binding, unsafe bypass refusal, and community corpus safety.
+
+### Changed
+
+- Refreshed `api-status.md` and `source-registry.md` to 2026-05-27 source boundaries.
+- Expanded active Chinese and Russian vocabulary references with role binding, first/last-frame, camera, lighting, audio, editing, constraint, and safety terms.
+- Updated prompt, pipeline, recipe, filter, and multilingual skills to route into the new research and FLF2V references.
+- Updated CI and release validation to run six checks instead of four.
+
+### Fixed
+
+- Prevented ambiguous `Seedance 2.0 Pro` naming from being treated as the official Seedance video-model name.
+- Made public prompt-corpus mining safety-first: extract structures and vocabulary, not unsafe raw examples.
+
 ## [5.3.0] — 2026-05-08
 
 ### Fixed

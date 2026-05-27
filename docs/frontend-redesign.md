@@ -13,6 +13,7 @@ The repository does not currently contain a standalone web app. The public front
 
 ## Assets
 
+- `assets/hero-cinematic.png`
 - `assets/hero-dark.svg`
 - `assets/hero-light.svg`
 - `assets/skill-map.svg`
@@ -23,3 +24,4 @@ The repository does not currently contain a standalone web app. The public front
 - Every SVG needs `<title>` and `<desc>`.
 - README should stay readable on mobile and dark mode.
 - Avoid dense badge walls and noisy decorative text.
+- Keep generated bitmap hero assets text-free; render all product/project text as real Markdown.

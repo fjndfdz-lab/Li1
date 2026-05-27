@@ -1,8 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img alt="Seedance 2.0 Skill OS — intent-first quad-modal AI filmmaking" src="assets/hero-light.svg">
-</picture>
+![Seedance 2.0 Skill OS cinematic hero: camera lens, reference frames, film strip, and audio waveform](assets/hero-cinematic.png)
 
 # Seedance 2.0 Skill OS
 
@@ -10,17 +6,17 @@
 
 Text-to-video · Image-to-video · Video-to-video · Reference-to-video · Audio-aware prompting · Copyright-safe rewrites · Agent Skills
 
-[![Version](https://img.shields.io/badge/version-5.3.0-111827?labelColor=0f172a)](#changelog)
+[![Version](https://img.shields.io/badge/version-5.4.0-111827?labelColor=0f172a)](#changelog)
 [![Skills](https://img.shields.io/badge/sub--skills-23-0ea5e9?labelColor=0f172a)](#skill-map)
-[![References](https://img.shields.io/badge/references-22-8b5cf6?labelColor=0f172a)](#reference-library)
-[![Evals](https://img.shields.io/badge/evals-26-22c55e?labelColor=0f172a)](#validation)
+[![References](https://img.shields.io/badge/references-28-8b5cf6?labelColor=0f172a)](#reference-library)
+[![Evals](https://img.shields.io/badge/evals-33-22c55e?labelColor=0f172a)](#validation)
 [![License](https://img.shields.io/badge/license-MIT-f59e0b?labelColor=0f172a)](LICENSE)
 
 Author: [Iamemily2050 (@iamemily2050)](https://github.com/Emily2040) · [Instagram](https://instagram.com/iamemily2050) · [X](https://x.com/iamemily2050) · [Website](https://iamemily2050.com)
 
 Platform context: [ByteDance Seedance 2.0](https://seed.bytedance.com/en/seedance2_0) · [Dreamina](https://dreamina.capcut.com) · [Jimeng](https://jimeng.jianying.com) · [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/2291680)
 
-Updated: **2026-05-08** · **v5.3.0 production-depth, multilingual, source, and eval coverage release**
+Updated: **2026-05-27** · **v5.4.0 research refresh, CN/RU deepening, FLF2V workflow, and source-freshness release**
 
 ---
 
@@ -38,14 +34,25 @@ The repository gives an AI assistant a public, auditable operating system for Se
 | “I know the scene I want.” | [`seedance-prompt`](skills/seedance-prompt/SKILL.md) | A production-ready Seedance prompt. |
 | “Make it short and strong.” | [`seedance-prompt-short`](skills/seedance-prompt-short/SKILL.md) | A compressed 30–100 word prompt. |
 | “I have an image/video/audio reference.” | [`reference-workflow`](references/reference-workflow.md) | A role map for every reference asset. |
+| “Use this as first frame and that as final frame.” | [`first-last-frame-guide`](references/first-last-frame-guide.md) | A continuous transition with endpoint locks. |
 | “It failed or looks bad.” | [`seedance-troubleshoot`](skills/seedance-troubleshoot/SKILL.md) | A root-cause diagnosis and repaired prompt. |
 | “This uses a character, brand, celebrity, or real person.” | [`seedance-copyright`](skills/seedance-copyright/SKILL.md) | A safer rewrite preserving the creative function. |
+| “Is this Seedance Pro/Fast/V2?” | [`model-name-map`](references/model-name-map.md) | Source-dated naming and surface caveats. |
 
 ## Current Status Rule
 
 Seedance platform behavior changes quickly. Before making factual claims about API availability, face or portrait authorization, upload limits, pricing, regional availability, or model names, load [`references/api-status.md`](references/api-status.md) and check its `last_verified` date.
 
-As of 2026-05-08, public official sources describe Seedance 2.0 as supporting text, image, audio, and video inputs, and BytePlus ModelArk publishes Seedance video-generation API documentation. Access, pricing, model IDs, upload limits, and authorization requirements remain surface-specific.
+As of 2026-05-27, public official sources describe Seedance 2.0 as supporting text, image, audio, and video inputs. Official launch material says references can include up to 9 images, 3 video clips, and 3 audio clips, and can guide composition, camera language, motion rhythm, visual effects, and sound. Access, pricing, model IDs, upload limits, regions, and authorization requirements remain surface-specific.
+
+## Research Snapshot
+
+The v5.4 release adds a dated research layer for safer data mining and platform claims:
+
+- [`research-2026-05-27.md`](references/research-2026-05-27.md) records official and field-observed signals.
+- [`platform-surface-matrix.md`](references/platform-surface-matrix.md) separates model capability from Dreamina/Jimeng, Volcengine/Ark, BytePlus, ComfyUI, and wrapper behavior.
+- [`model-name-map.md`](references/model-name-map.md) prevents `Seedance 2.0`, `Seedance 2.0 Fast`, `Seedance V2`, and ambiguous Pro labels from being mixed together.
+- [`community-source-methodology.md`](references/community-source-methodology.md) explains how to mine public prompt corpora without copying unsafe examples.
 
 ## Skill Map
 
@@ -98,6 +105,12 @@ As of 2026-05-08, public official sources describe Seedance 2.0 as supporting te
 |---|---|
 | [`api-status.md`](references/api-status.md) | Current dated platform and API status. |
 | [`source-registry.md`](references/source-registry.md) | Source hierarchy and evidence labels. |
+| [`research-2026-05-27.md`](references/research-2026-05-27.md) | Dated source and field-observation snapshot. |
+| [`platform-surface-matrix.md`](references/platform-surface-matrix.md) | Model-vs-surface claim boundaries. |
+| [`model-name-map.md`](references/model-name-map.md) | Seedance naming, Fast variant, and Pro-label caveats. |
+| [`first-last-frame-guide.md`](references/first-last-frame-guide.md) | FLF2V, first-frame, and last-frame prompting. |
+| [`field-observed-tips.md`](references/field-observed-tips.md) | Safe practitioner workflow patterns. |
+| [`community-source-methodology.md`](references/community-source-methodology.md) | Safe public corpus mining and labeling rules. |
 | [`platform-constraints.md`](references/platform-constraints.md) | Stable platform-risk rules. |
 | [`quick-ref.md`](references/quick-ref.md) | Compact routing and prompt checklist. |
 | [`reference-workflow.md`](references/reference-workflow.md) | How to map image, video, audio, and storyboard references. |
@@ -147,17 +160,19 @@ python scripts/validate_skills.py --strict
 python scripts/content_audit.py --strict
 python scripts/eval_schema_check.py --strict
 python scripts/design_audit.py --strict
+python scripts/source_registry_check.py --strict
+python scripts/vocab_schema_check.py --strict
 ```
 
 The CI workflow runs the same checks on push and pull request.
 
 ## Design Standard
 
-The v5.3 frontend intentionally keeps the cleaned v5.2 design language while adding deeper production guidance, multilingual coverage, and eval breadth. The README should stay readable in GitHub mobile, dark mode, and narrow widths. SVG assets must include `<title>` and `<desc>` elements, use internal CSS only, and avoid external fonts or scripts. See [`docs/frontend-redesign.md`](docs/frontend-redesign.md).
+The v5.4 front page uses a generated cinematic bitmap hero plus the cleaned v5.2 information architecture. The README should stay readable in GitHub mobile, dark mode, and narrow widths. SVG assets must include `<title>` and `<desc>` elements, use internal CSS only, and avoid external fonts or scripts. See [`docs/frontend-redesign.md`](docs/frontend-redesign.md).
 
 ## Changelog
 
-See [`CHANGELOG.md`](CHANGELOG.md). Current release: **v5.3.0**.
+See [`CHANGELOG.md`](CHANGELOG.md). Current release: **v5.4.0**.
 
 ## License
 
