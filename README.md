@@ -283,6 +283,8 @@ For manual installation, copy this repository into the skill directory used by y
 | Cursor workspace | `.cursor/skills/seedance-20/` |
 | Windsurf workspace | `.windsurf/skills/seedance-20/` |
 
+Beyond these, the Agent Skills standard reports 30+ compatible clients - including Cline, Roo Code, Goose, Amp, OpenCode, Trae, Kiro, Qwen Code, Continue, Crush, Droid, OpenHands, and Letta - all of which consume the same shape: copy this repository as one `seedance-20` folder into the client's skills directory. See [`agent-compatibility.md`](references/agent-compatibility.md) for the verified matrix and recheck rules.
+
 ## Validation
 
 Run these checks before every release:

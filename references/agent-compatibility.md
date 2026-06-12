@@ -45,6 +45,15 @@ Verified 2026-06-12 from each agent's public docs; install paths are volatile - 
 | OpenClaw | workspace `skills/`, `~/.openclaw/skills/` (global) | `openclaw skills install` (git/local expect `SKILL.md` at source root - this repo qualifies) | ClawHub is the public registry (`clawhub` CLI to publish). Every skill here already carries `openclaw:` metadata. |
 | Hermes Agent (Nous Research) | project `skills/`, `~/.hermes/skills/` | `hermes skills install` (runs a security scan) | Activates on the frontmatter `description` - this repo's third-person activation wording is exactly what it matches. |
 | Gemini CLI / Cursor / Windsurf / Copilot | `.gemini/`, `.cursor/`, `.windsurf/`, `.github/` + `skills/` | copy the folder | Treat as installation targets, not separate source trees. |
+| Trae (ByteDance) | client skills directory | copy the folder | ByteDance's own agent - reported SKILL.md-compatible; a natural home for a Seedance skill. Recheck paths in the active client. |
+
+### Reported SKILL.md-compatible (recheck per client)
+
+The Agent Skills standard reports 30+ adopters beyond the verified rows above, including Cline, Roo Code, Goose (Block), Amp (Sourcegraph), OpenCode, Kiro (AWS), Qwen Code, Continue, Crush (Charm), Droid (Factory), OpenHands, Letta, Pi, Kilo, and VS Code. The portable shape is the same everywhere: copy this repository as one `seedance-20` folder into the client's skills directory. Treat each client's exact path, scan rules, and metadata support as volatile - verify before promising behavior.
+
+### Registries and marketplaces
+
+Cross-agent skill registries exist (SkillsMP, GuildSkills, LobeHub, ClawHub, and installer CLIs that sync from them). They are distribution channels, not sources of truth: do not claim this skill is listed anywhere it has not actually been published.
 
 ## Cross-Client Notes
 
