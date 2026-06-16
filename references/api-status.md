@@ -1,7 +1,7 @@
 # Seedance 2.0 API and Platform Status
 
-last_verified: 2026-06-13
-confidence: public-source snapshot as of the verification date; per-section dates apply where noted (overseas-API status and Replicate recorded 2026-06-13, fal section re-verified 2026-06-11, earlier surface sections verified 2026-05-30); not a guarantee of access, pricing, model IDs, upload limits, authorization behavior, or regional availability on every surface
+last_verified: 2026-06-16
+confidence: public-source snapshot as of the verification date; per-section dates apply where noted (EvoLink recorded 2026-06-16, overseas-API status and Replicate recorded 2026-06-13, fal section re-verified 2026-06-11, earlier surface sections verified 2026-05-30); not a guarantee of access, pricing, model IDs, upload limits, authorization behavior, or regional availability on every surface
 
 ## Confirmed From Public Sources
 
@@ -20,6 +20,7 @@ confidence: public-source snapshot as of the verification date; per-section date
 - A Volcengine developer-community article says Seedance 2.0 API service is online and mentions portrait/copyright safety standards, face verification, portrait authorization, virtual portrait assets, and BytePlus overseas API service. Treat this as official ecosystem/news evidence, not the API contract.
 - Public BytePlus pages may be JavaScript-rendered in static fetches. Do not quote Seedance 2.0 BytePlus pricing or model IDs from such pages without live official verification.
 - Runway's official Seedance 2 API guide documents model `seedance2`, 5-15 second duration, image/video/audio references, upload handling through `runway://`, audio-combination rules, and SDK-type lag for `referenceAudio`.
+- EvoLink's public Seedance 2.0 page documents an async video-generation API for that surface, including `/v1/videos/generations`, `/v1/tasks/{task_id}`, Bearer token authentication, model parameter switching, 4-15 second duration, and 480p/720p/1080p quality options.
 - Partner workflow docs such as ComfyUI expose T2V, R2V, and FLF2V workflow vocabulary, but those docs are surface-specific.
 - Recent AV-generation benchmark papers, including AVBench and VABench, are useful for eval vocabulary around audio-video consistency, but they are not Seedance platform-access sources.
 
@@ -28,7 +29,7 @@ confidence: public-source snapshot as of the verification date; per-section date
 Authoritative reporting (Variety and CNBC, Feb–Mar 2026) documents that after Seedance 2.0's China launch on 2026-02-12, Disney, Warner Bros., Paramount, Netflix, and the Motion Picture Association sent ByteDance cease-and-desist letters over alleged IP infringement, and ByteDance **suspended the planned overseas API rollout (~2026-03-15)** pending resolution and added safeguards. What this means for guidance:
 
 - Treat overseas/global Seedance 2.0 API access as **contested and volatile**, not guaranteed-available. Verify live access, region, and rights posture before relying on any surface.
-- Third-party surfaces (fal, Atlas Cloud, Replicate, and others) have shown live Seedance 2.0 endpoints at various dates; that does not establish stable official global availability — access has shifted and may shift again. Recheck immediately before production.
+- Third-party surfaces (fal, EvoLink, Atlas Cloud, Replicate, and others) have shown live Seedance 2.0 endpoints at various dates; that does not establish stable official global availability — access has shifted and may shift again. Recheck immediately before production.
 - The dispute makes the repo's standing rule operational, not hypothetical: never reproduce protected characters, scenes, or real-person likenesses — that exact behavior triggered the suspension.
 
 ## Platform Safeguards — Now Live *(recorded 2026-06-14)*
@@ -43,7 +44,7 @@ Implication for the skill: false-positive repair and IP-safe rewriting are not o
 
 ## Resolution — Model vs Surface *(recorded 2026-06-14)*
 
-Primary sources (the arXiv model card and the ByteDance Seed page) state Seedance 2.0's **native output resolution is 480p/720p**. Higher resolutions are **surface-specific, not a model-native guarantee**, and even a single surface's docs can disagree: Volcengine/Ark (Pro), BytePlus, Atlas Cloud, Runway, and WaveSpeed expose **1080p**; fal's prose guide says 480p/720p while its model and pricing pages list 1080p (see the fal section below). Treat 480p/720p as the baseline capability and any 1080p/“2K” claim as a per-surface feature to verify per endpoint at call time — never as a universal model spec.
+Primary sources (the arXiv model card and the ByteDance Seed page) state Seedance 2.0's **native output resolution is 480p/720p**. Higher resolutions are **surface-specific, not a model-native guarantee**, and even a single surface's docs can disagree: Volcengine/Ark (Pro), BytePlus, EvoLink, Atlas Cloud, Runway, and WaveSpeed expose **1080p**; fal's prose guide says 480p/720p while its model and pricing pages list 1080p (see the fal section below). Treat 480p/720p as the baseline capability and any 1080p/“2K” claim as a per-surface feature to verify per endpoint at call time — never as a universal model spec.
 
 ## fal — Authorized Provider, Global *(added 2026-06-10; fields, resolution, and pricing re-verified 2026-06-11)*
 
@@ -58,17 +59,26 @@ Primary sources (the arXiv model card and the ByteDance Seed page) state Seedanc
 **Prompting:** prose direction; `Shot 1:/Shot 2:` labels for multi-shot; r2v docs also accept timestamp pacing phrases as secondary hints. **Fast tier:** official fal docs give fast endpoints the same schema and multi-shot support; field reports still favor the Standard tier for multi-shot, slow motion, and dolly moves — treat that as field guidance, not provider doc.
 **No dedicated extend endpoint** — extend is a Dreamina-app feature. To continue a clip on fal, prefer reference-to-video with the previous clip as a video reference (keeps motion and audio context); chaining image-to-video from the previous clip's last frame is the fallback.
 
+## EvoLink — Third-Party Aggregator Surface *(added 2026-06-16)*
+
+**API shape:** EvoLink's public Seedance 2.0 page documents asynchronous video generation: `POST /v1/videos/generations` creates a task, returns an `id`, and `GET /v1/tasks/{task_id}` retrieves status/results. Bearer token authentication is required, and callback URLs are supported on the documented create-task form.
+**Model naming:** the page shows `seedance-2.0-text-to-video` as a model value and says the `model` parameter switches Seedance versions/modes. Recheck the live page or account console before using image-to-video, reference-to-video, or fast model IDs.
+**Visible parameters:** prompt, duration 4-15s, quality 480p/720p/1080p, aspect ratio, `generate_audio`, optional web search under `model_params`, and callback URL. Reference-media schema and mode-specific exclusions must be rechecked before implementation.
+**Pricing:** EvoLink's public page lists per-second billing and current route prices. Treat every price as volatile and surface-specific; quote only with date, mode, quality, currency, and a recheck warning.
+**Boundary:** EvoLink is an aggregator/provider surface, not official ByteDance, Volcengine, BytePlus, Runway, or fal behavior. This repo endorses no host; it records the surface so users avoid mixing schemas.
+
 ## Operational Wording
 
 Use this wording unless newer primary sources say otherwise:
 
-> As of 2026-05-30, public ByteDance sources describe Seedance 2.0 as a unified multimodal audio-video generation model with text, image, audio, and video inputs. Official launch and model-card material says references can include up to 9 images, 3 video clips, and 3 audio clips. Volcengine/Ark and Runway publish current Seedance 2 documentation, but access, model IDs, pricing, file limits, regional availability, resolution, audio-combination rules, and portrait authorization remain surface-specific and must be rechecked before production use.
+> As of 2026-06-16, public ByteDance sources describe Seedance 2.0 as a unified multimodal audio-video generation model with text, image, audio, and video inputs. Official launch and model-card material says references can include up to 9 images, 3 video clips, and 3 audio clips. Volcengine/Ark, Runway, fal, and EvoLink publish current Seedance 2 documentation or provider pages, but access, model IDs, pricing, file limits, regional availability, resolution, audio-combination rules, and portrait authorization remain surface-specific and must be rechecked before production use.
 
 ## Model Naming Rule
 
 - Use `Seedance 2.0` for the official video model line.
 - Use `Seedance 2.0 Fast` only when the active surface exposes a Fast variant.
 - Use `seedance2` only for Runway's API surface.
+- Use `seedance-2.0-text-to-video` only for EvoLink's API surface.
 - Do not call `Seedance 2.0 Pro` the official video-model name without a current source. Treat it as ambiguous wrapper or community wording.
 - Do not confuse `Seed2.0 Pro` or Doubao/Seed general model names with Seedance video generation.
 
@@ -79,7 +89,7 @@ See [`model-name-map.md`](model-name-map.md).
 - Say that API availability, pricing, model IDs, upload limits, entitlement rules, rate limits, and regional availability must be checked against current primary sources.
 - Avoid claiming that an API is globally available or unavailable unless a current primary source says so.
 - Avoid claiming that face or portrait uploads are universally supported or universally blocked unless a current primary source says so.
-- Separate model capability from product-surface behavior. Dreamina/Jimeng, Doubao, Volcengine/Ark, BytePlus/ModelArk, ComfyUI, fal, and third-party wrappers can differ.
+- Separate model capability from product-surface behavior. Dreamina/Jimeng, Doubao, Volcengine/Ark, BytePlus/ModelArk, ComfyUI, fal, EvoLink, and third-party wrappers can differ.
 - Treat third-party wrapper prices and model aliases as wrapper-specific, not official.
 
 ## Known Limit Categories
@@ -121,6 +131,7 @@ Real-person face, portrait, and voice workflows require authorization, legal/eth
 - https://fal.ai/models/bytedance/seedance-2.0/text-to-video
 - https://fal.ai/models/bytedance/seedance-2.0/image-to-video
 - https://fal.ai/models/bytedance/seedance-2.0/reference-to-video
+- https://evolink.ai/seedance-2-0
 - https://docs.dev.runwayml.com/guides/seedance/
 - https://help.runwayml.com/hc/en-us/articles/50488490233363-Creating-with-Seedance-2-0
 - https://docs.comfy.org/zh/tutorials/partner-nodes/bytedance/seedance-2-0

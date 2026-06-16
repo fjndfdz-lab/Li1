@@ -1,8 +1,8 @@
 # API Workflow
 
-last_verified: 2026-05-30
+last_verified: 2026-06-16
 
-Use this reference for Seedance 2.0 operational planning on Volcengine, BytePlus, Runway, or wrappers. It is not a static API contract. Always recheck the active provider docs or console before implementation.
+Use this reference for Seedance 2.0 operational planning on Volcengine, BytePlus, Runway, EvoLink, or wrappers. It is not a static API contract. Always recheck the active provider docs or console before implementation.
 
 ## Surface Gate
 
@@ -11,6 +11,7 @@ Use this reference for Seedance 2.0 operational planning on Volcengine, BytePlus
 | Volcengine Ark | China-facing official Ark workflows, model IDs, task lifecycle, first/last-frame roles, `return_last_frame`, web-search tools, and virtual portrait assets. | model ID, region, entitlement, schema, pricing, duration, resolution, face/reference policy |
 | BytePlus ModelArk | International BytePlus docs or console workflows. | JS-rendered pricing/model pages, account access, region, exact model ID, upload/file rules |
 | Runway | Runway web/API/MCP workflow with `seedance2`, hosted uploads, and Runway plan/region constraints. | duration, ratios, plan, region, SDK field support, audio-reference combination rules |
+| EvoLink | Third-party unified API workflow using `POST /v1/videos/generations` and `GET /v1/tasks/{task_id}` for Seedance 2.0. | base URL, model IDs, pricing, references schema, content policy, callback/webhook behavior, account access |
 | Wrapper APIs | Fast prototyping through a third-party provider. | whether names, prices, moderation, duration, or face support are wrapper-specific |
 
 ## Async Task Lifecycle
@@ -37,6 +38,8 @@ Use this reference for Seedance 2.0 operational planning on Volcengine, BytePlus
 Volcengine docs are the current source for `doubao-seedance-2-0-260128`, `doubao-seedance-2-0-fast-260128`, first/last-frame roles, and Ark task flow. Quote prices only with date and caveat.
 
 Runway docs are the current source for Runway's `seedance2` API surface, `runway://` uploads, duration, reference-count rules, and SDK caveats. Do not copy Runway field names into Volcengine examples or vice versa.
+
+EvoLink's public Seedance 2.0 page, verified 2026-06-16, documents an async REST shape: submit a video task to `/v1/videos/generations`, receive a task `id`, and poll `/v1/tasks/{task_id}` or use a callback. It shows Bearer token authentication, `seedance-2.0-text-to-video` as a model value, 4-15 second duration, 480p/720p/1080p quality options, and per-second billing. Treat all of those as EvoLink-surface behavior, not official ByteDance/Volcengine behavior, and recheck before implementation.
 
 BytePlus pages can be JavaScript-rendered. Do not infer live pricing or model IDs from incomplete static fetches.
 

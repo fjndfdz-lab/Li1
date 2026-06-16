@@ -1,6 +1,6 @@
 # Source Registry
 
-last_verified: 2026-06-11
+last_verified: 2026-06-16
 
 Use this registry before making factual claims about Seedance 2.0 platform behavior. Prefer primary public sources, attach a verification date, and mark volatile claims as recheck-required. This file is a claim-boundary map, not a guarantee of access on every product surface or region.
 
@@ -31,6 +31,7 @@ Use this registry before making factual claims about Seedance 2.0 platform behav
 | Face, portrait, and voice behavior | Active product surface, official policy, and user authorization | volatile | Recheck current surface behavior and authorization context. | Do not infer consent from a file upload. |
 | Runway Seedance 2 surface | Runway API and help docs: https://docs.dev.runwayml.com/guides/seedance/ and https://help.runwayml.com/hc/en-us/articles/50488490233363-Creating-with-Seedance-2-0 | volatile | Recheck duration, ratios, audio/reference combination rules, region availability, plan requirements, and SDK support before production use. | Official Runway surface, not a ByteDance/Volcengine API contract. |
 | fal Seedance 2.0 surface | fal model/API pages: https://fal.ai/models/bytedance/seedance-2.0/text-to-video, https://fal.ai/models/bytedance/seedance-2.0/image-to-video, and https://fal.ai/models/bytedance/seedance-2.0/reference-to-video | volatile | Recheck endpoints, request fields, resolution tiers, duration, and per-second pricing before quoting numbers or writing API calls. | Official fal surface behavior, not Volcengine, BytePlus, or Runway behavior. Fast endpoints share the documented schema; multi-shot reliability downgrades on fast tiers are field-observed, not official. |
+| EvoLink Seedance 2.0 surface | EvoLink public route page: https://evolink.ai/seedance-2-0 | volatile | Recheck endpoint base URL, model IDs, reference schema, callback/webhook behavior, content policy, account access, resolution tiers, and per-second pricing before writing API calls or quoting numbers. | Third-party aggregator/provider surface, not a ByteDance/Volcengine/BytePlus/Runway/fal API contract. |
 | Agent Skills structure | OpenAI Codex Agent Skills docs: https://developers.openai.com/codex/skills, OpenAI Academy plugins/skills explainer: https://openai.com/academy/codex-plugins-and-skills/, OpenAI Codex Plugins docs, and Agent Skills open standard: https://agentskills.io/ | confirmed | Recheck before changing install guidance or root skill layout. | Packaging guidance, not Seedance platform capability. |
 | Runway MCP agent surface | Runway MCP announcement: https://runwayml.com/news/mcp | confirmed | Use for agent-surface availability only. | Does not change Seedance model capability; plan and connector access are Runway-specific. |
 | Audio-video eval vocabulary | AVBench and VABench papers: https://arxiv.org/abs/2605.24652 and https://openaccess.thecvf.com/content/CVPR2026/papers/Hua_VABench_A_Comprehensive_Benchmark_for_Audio-Video_Generation_CVPR_2026_paper.pdf | field-observed | Use for eval dimensions such as audio-video sync and cross-modal consistency. | Benchmark framing, not product access or official Seedance performance proof. |
@@ -48,7 +49,7 @@ Use this registry before making factual claims about Seedance 2.0 platform behav
 
 ## Required Claim Patterns
 
-When answering platform-status questions, say: `As of 2026-06-11, public official sources describe Seedance 2.0 as supporting text, image, audio, and video inputs, including multimodal references for composition, camera language, motion rhythm, visual effects, and sound. Volcengine documents first/last-frame roles, Runway documents a Seedance 2 surface, and fal documents text-to-video, image-to-video, and reference-to-video endpoints, but access, pricing, model IDs, upload limits, regions, resolution, audio-combination rules, and authorization behavior remain surface-specific and should be rechecked.`
+When answering platform-status questions, say: `As of 2026-06-16, public official sources describe Seedance 2.0 as supporting text, image, audio, and video inputs, including multimodal references for composition, camera language, motion rhythm, visual effects, and sound. Volcengine documents first/last-frame roles, Runway documents a Seedance 2 surface, fal documents text-to-video, image-to-video, and reference-to-video endpoints, and EvoLink documents an async /v1/videos/generations surface, but access, pricing, model IDs, upload limits, regions, resolution, audio-combination rules, and authorization behavior remain surface-specific and should be rechecked.`
 
 When answering pricing, quota, upload-limit, model-ID, or regional-availability questions, do not guess. State that those values are volatile and require checking the current official surface.
 

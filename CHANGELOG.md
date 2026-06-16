@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## Unreleased
+
+### Added
+
+- Added EvoLink as a source-gated Seedance 2.0 third-party aggregator surface across `api-status.md`, `source-registry.md`, `platform-surface-matrix.md`, `api-workflow.md`, and `model-name-map.md`, including the async `/v1/videos/generations` submit/poll workflow and surface-specific recheck caveats.
+
 ## [5.5.2] — 2026-06-12
 
 ### Changed

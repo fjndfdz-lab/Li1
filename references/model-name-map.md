@@ -1,6 +1,6 @@
 # Model Name Map
 
-last_verified: 2026-06-14
+last_verified: 2026-06-16
 
 Use this file when a user says "Seedance Pro", "Seedance V2", "Seed2.0 Pro", or wrapper-specific model names.
 
@@ -17,6 +17,8 @@ Use this file when a user says "Seedance Pro", "Seedance V2", "Seed2.0 Pro", or 
 | `dreamina-seedance-2-0-260128` / `-fast-260128` | BytePlus ModelArk model IDs — the international counterpart of the Volcengine `doubao-` IDs (reported 2026-06-14) | BytePlus uses a `dreamina-` prefix where Volcengine uses `doubao-`. Same model family, different surface; recheck the live ModelArk docs before quoting. |
 | `seedance2` | Runway API model ID | Use only for Runway's API surface. Do not substitute for Volcengine/Doubao model IDs. |
 | fal Seedance 2.0 endpoints | fal's hosted Seedance 2.0 surface: `text-to-video`, `image-to-video`, `reference-to-video`, each with a `/fast` tier | Use fal endpoint naming only for the fal surface (verified 2026-06-09). Recheck endpoint IDs, resolution tiers, and per-second pricing live before quoting. Do not substitute for Volcengine, Doubao, or Runway model IDs. |
+| `seedance-2.0-text-to-video` | EvoLink Seedance 2.0 text-to-video model value shown on the public EvoLink page | Use only on EvoLink's async video API surface (verified 2026-06-16). Recheck current model IDs, pricing, reference fields, and account access before implementation. Do not substitute for Volcengine, Doubao, Runway, fal, or Replicate naming. |
+| EvoLink Seedance 2.0 model family | EvoLink's unified Seedance API surface, where the model parameter switches versions/modes | Treat as aggregator-specific naming. Keep it out of official ByteDance/Volcengine examples unless the user explicitly targets EvoLink. |
 | Seedance V2 | Community shorthand | Normalize to Seedance 2.0 unless the user is clearly referring to a wrapper-specific model. |
 | Seedance 2.0 Pro | Ambiguous community shorthand | Do not assume this is an official video-model name. Ask which surface, or normalize to Seedance 2.0 / Fast with a caveat. |
 | Seed2.0 Pro | Separate Seed/Doubao naming seen outside the Seedance video model line | Do not confuse with Seedance 2.0 video generation. |

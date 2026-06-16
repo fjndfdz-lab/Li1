@@ -24,7 +24,7 @@ An agent operating system for Seedance 2.0 filmmaking — text, image, video, an
 
 Author: [Iamemily2050 (@iamemily2050)](https://github.com/Emily2040) · [Instagram](https://instagram.com/iamemily2050) · [X](https://x.com/iamemily2050) · [Website](https://iamemily2050.com)
 
-Platform context: [ByteDance Seedance 2.0](https://seed.bytedance.com/en/seedance2_0) · Dreamina · Jimeng · Doubao · [Volcengine Ark](https://www.volcengine.com/docs/82379/2291680?lang=zh) · [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/2291680) · [Runway Seedance 2](https://docs.dev.runwayml.com/guides/seedance/) · fal
+Platform context: [ByteDance Seedance 2.0](https://seed.bytedance.com/en/seedance2_0) · Dreamina · Jimeng · Doubao · [Volcengine Ark](https://www.volcengine.com/docs/82379/2291680?lang=zh) · [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/2291680) · [Runway Seedance 2](https://docs.dev.runwayml.com/guides/seedance/) · fal · [EvoLink](https://evolink.ai/seedance-2-0)
 
 Updated: **2026-06-12** · **v5.5.2 deep-proofread release: every file swept, every weight uniform**
 
@@ -87,7 +87,7 @@ For these requests, the skill should not stop at a single prompt. It should retu
 | “I need this for a film, client, campaign, or delivery.” | [`pro-filmmaking-standards`](references/pro-filmmaking-standards.md) | A professional workflow plan, role-specific artifact, and prompt path. |
 | “Turn this treatment into shots.” | [`shot-list-continuity`](references/shot-list-continuity.md) | Shot list, continuity ledger, and prompt batch structure. |
 | “This needs subtitles, dubbing, color, sound, or QC.” | [`delivery-qc`](references/delivery-qc.md) | Post, localization, audio, color, and delivery checks. |
-| “I need API, Runway, pricing, model ID, or production workflow guidance.” | [`api-workflow`](references/api-workflow.md) | A source-gated operational checklist. |
+| “I need API, Runway, EvoLink, pricing, model ID, or production workflow guidance.” | [`api-workflow`](references/api-workflow.md) | A source-gated operational checklist. |
 | “Is this Seedance Pro/Fast/V2?” | [`model-name-map`](references/model-name-map.md) | Source-dated naming and surface caveats. |
 | “I want Chinese/Russian/Japanese/Korean/Spanish or mixed-language prompt examples.” | [`multilingual-community-examples`](references/multilingual-community-examples.md) | Safe community-informed structures and false-positive repair patterns. |
 | “I am installing or reviewing this as an agent skill.” | [`agent-compatibility`](references/agent-compatibility.md) | Codex/Agent Skills structure and distribution notes. |
@@ -96,9 +96,9 @@ For these requests, the skill should not stop at a single prompt. It should retu
 
 Seedance platform behavior changes quickly. Before making factual claims about API availability, face or portrait authorization, upload limits, pricing, regional availability, or model names, load [`references/api-status.md`](references/api-status.md) and check its `last_verified` date.
 
-As of 2026-06-11, public official sources describe Seedance 2.0 as supporting text, image, audio, and video inputs. Official launch and model-card material says references can include up to 9 images, 3 video clips, and 3 audio clips.
+As of 2026-06-16, public official sources describe Seedance 2.0 as supporting text, image, audio, and video inputs. Official launch and model-card material says references can include up to 9 images, 3 video clips, and 3 audio clips.
 
-Volcengine's May 29 docs keep `doubao-seedance-2-0-260128` and `doubao-seedance-2-0-fast-260128` visible as current Ark model IDs and document first/last-frame role usage on that surface. Runway documents `seedance2` with 5-15 second duration and optional image, video, and audio references.
+Volcengine's May 29 docs keep `doubao-seedance-2-0-260128` and `doubao-seedance-2-0-fast-260128` visible as current Ark model IDs and document first/last-frame role usage on that surface. Runway documents `seedance2` with 5-15 second duration and optional image, video, and audio references. EvoLink documents an async `/v1/videos/generations` surface with task polling at `/v1/tasks/{task_id}`.
 
 Access, pricing, upload limits, regions, resolution, audio-combination rules, and authorization requirements remain surface-specific.
 
@@ -203,7 +203,7 @@ Concept art for the system, generated and curated. Every image is paired with se
 | [`source-registry.md`](references/source-registry.md) | Source hierarchy and evidence labels. |
 | [`research-2026-05-30.md`](references/research-2026-05-30.md) | Dated source and field-observation snapshot. |
 | [`agent-compatibility.md`](references/agent-compatibility.md) | Agent Skills structure, Codex compatibility, and packaging notes. |
-| [`api-workflow.md`](references/api-workflow.md) | Volcengine, BytePlus, Runway, async task, reference-file, pricing, and production workflow checklist. |
+| [`api-workflow.md`](references/api-workflow.md) | Volcengine, BytePlus, Runway, EvoLink, async task, reference-file, pricing, and production workflow checklist. |
 | [`capability-map.md`](references/capability-map.md) | Design into model strengths and around known limits before prompting. |
 | [`model-mechanics.md`](references/model-mechanics.md) | Why the rules work: eight mechanisms of the generator, novel-case derivation, mechanism-indexed diagnosis. |
 | [`retake-protocol.md`](references/retake-protocol.md) | The iteration economy: take triage, the one-variable rule, attempt budgets, cost awareness, the shot log. |
