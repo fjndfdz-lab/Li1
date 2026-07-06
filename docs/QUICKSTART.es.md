@@ -1,81 +1,83 @@
 # Seedance 2.0 Skill OS — Guía rápida
 
-> Versión 6.6.0 · De la instalación a tu primer prompt "dirigido" en unos 5 minutos.
+> Versión 6.6.0 · De la instalación a tu primer prompt "con dirección" en unos 5 minutos.
 > Documentación completa: [README](../README.md).
 
-## Qué es esto
+## En una frase
 
-Seedance 2.0 Skill OS es un agent skill que dirige Seedance 2.0 como un cineasta en lugar de acumular adjetivos. Una sola regla: **dirige el modelo, no microgestiones el encuadre.** Describe lo que la escena está *haciendo* y la skill compila esa intención en un prompt listo para producción.
+Seedance 2.0 Skill OS es un agent skill que dirige Seedance 2.0 como lo haría un cineasta, en lugar de amontonar adjetivos. Una sola regla: **dirige el modelo, no te pelees con cada fotograma.** Cuéntale qué está *haciendo* la escena y la skill convierte esa intención en un prompt listo para producción.
 
 ## 1. Instalación (unos 5 minutos)
 
-Instala este repositorio como **una** skill raíz llamada `seedance-20`; sus sub-skills y references se cargan por ruta relativa.
+Instala el repositorio como **una** skill raíz llamada `seedance-20`; sus sub-skills y references se cargan solas por ruta relativa.
 
-**Codex (tiene instalador de un comando):**
+**Codex (trae un instalador de un solo comando)**
 
 ```bash
 python scripts/install_codex_skill.py --force
 ```
 
-Copia el repo a `~/.codex/skills/seedance-20` (o `$CODEX_HOME/skills/seedance-20`). Reinicia Codex y llama a `$seedance-20`.
+Copia el repo a `~/.codex/skills/seedance-20` (o `$CODEX_HOME/skills/seedance-20`). Reinicia Codex y luego llama a `$seedance-20`.
 
-**Instalar desde GitHub (si tu cliente admite instalación por URL de repositorio):**
+**Instalar desde GitHub (si tu cliente lo permite por URL)**
 
 ```text
 https://github.com/Emily2040/seedance-2.0
 ```
 
-**Copia manual (otros clientes):** copia la carpeta en el directorio de skills de tu cliente, manteniendo el nombre `seedance-20`. Los destinos habituales —verifícalos en tu propio cliente, no son una garantía— están en la [tabla de instalación del README](../README.md#install): p. ej. Claude Code `.claude/skills/`, Cursor `.cursor/skills/`, GitHub Copilot `.github/skills/`, Windsurf `.windsurf/skills/`.
+**Copia manual (otros clientes)**
 
-> Seguridad primero: instálalo solo en clientes de agente en los que confíes. Lee [SECURITY.md](../SECURITY.md) antes de usar esta skill en un agente ajeno o desconocido.
+Copia la carpeta en el directorio de skills de tu cliente, sin cambiarle el nombre `seedance-20`. Los destinos habituales están en la [tabla de instalación del README](../README.md#install) (no es una garantía: compruébalos en tu propio cliente). Por ejemplo: Claude Code `.claude/skills/`, Cursor `.cursor/skills/`, GitHub Copilot `.github/skills/`, Windsurf `.windsurf/skills/`.
 
-## 2. Elige la skill según tu situación
+> Lo primero, la seguridad: instálalo solo en clientes de agente en los que confíes. Antes de usar esta skill en un agente ajeno o desconocido, léete [SECURITY.md](../SECURITY.md).
 
-| Tienes… | Carga primero |
+## 2. Elige la skill según tu caso
+
+| Lo que tienes… | Carga primero |
 |---|---|
-| una idea vaga | `seedance-interview` |
+| una idea todavía difusa | `seedance-interview` |
 | una escena clara | `seedance-prompt` |
 | una historia de varios clips | `seedance-sequence` |
-| un clip aceptado que continuar | `seedance-continuation` |
-| un resultado malo o bloqueado | `seedance-troubleshoot` |
+| un clip ya aprobado que continuar | `seedance-continuation` |
+| un resultado flojo o bloqueado | `seedance-troubleshoot` |
 | un personaje, marca, celebridad o persona real | `seedance-copyright` |
 
 ## 3. Dirige antes de escribir — cuatro preguntas
 
 1. **¿Qué está haciendo la escena?** ¿Un giro, una revelación, una emoción, una demostración?
-2. **¿Cómo lo dice la cámara?** Plano general para el aislamiento, primer plano para el rostro, un travelling de acercamiento para la revelación.
-3. **¿Qué hace la luz?** Hora del día, dura o suave, cálida o fría — al servicio de la intención.
-4. **¿Qué hace el sonido?** Casi silencio, un detalle de ambiente, o una línea de diálogo.
+2. **¿Cómo lo cuenta la cámara?** El plano general para la soledad, el primer plano para el rostro, un acercamiento lento para la revelación.
+3. **¿Para qué trabaja la luz?** La hora del día, dura o suave, cálida o fría — todo al servicio de la intención.
+4. **¿Qué hace el sonido?** Casi silencio, un solo detalle de ambiente, o una línea de diálogo.
 
-## 4. Un ejemplo
+## 4. Un contraste
 
-**Decorado (débil):**
-
-```
-plano épico y cinematográfico de una mujer leyendo una carta, emotivo, iluminación hermosa, 4K
-```
-
-**Dirigido (fuerte):**
+**Recargado (flojo)**
 
 ```
-Plano medio corto, a la altura de los ojos; baja la carta y sus manos se detienen mientras llega un lento acercamiento; una luz de ventana suave mantiene su rostro sobrio; casi silencio con el roce de una silla.
+plano épico y cinematográfico de una mujer leyendo una carta, emotivo, iluminación preciosa, 4K
 ```
 
-## 5. Dos reglas que ahorran tomas
+**Con dirección (fuerte)**
 
-- **Conserva las etiquetas de referencia tal cual** — `[Image1]`, `[Video1]`, `[Audio1]`, `@图1`, `@视频1`. Nunca las traduzcas ni las reformatees.
-- **No pidas toda la historia en una sola generación.** Genera el Clip 01, observa cómo terminó *realmente* y luego escribe el Clip 02 desde ese final real (`seedance-continuation`).
+```
+Plano medio corto, a la altura de los ojos; baja la carta y sus manos se quedan quietas mientras llega un acercamiento lento; una luz de ventana suave le deja el rostro sobrio; casi silencio, con el roce de una silla.
+```
+
+## 5. Dos reglas que te ahorran tomas
+
+- **Deja las etiquetas de referencia tal cual:** `[Image1]`, `[Video1]`, `[Audio1]`, `@图1`, `@视频1`. Ni las traduzcas ni las reformatees.
+- **No pidas la historia entera en una sola generación.** Genera el Clip 01, mira cómo terminó *de verdad* y escribe el Clip 02 a partir de ese final real (`seedance-continuation`).
 
 ## 6. Seguridad
 
-- **Seguridad de contenido:** si tu idea usa un personaje protegido, una celebridad, una marca, un logo, una canción o el rostro o la voz de una persona real, no lo escondas en otro idioma: reescríbelo en un equivalente original, con licencia o de posproducción con `seedance-copyright`.
-- **Seguridad del agente:** este paquete **no hace llamadas de red ni incluye telemetría**; sus scripts son deterministas y funcionan sin conexión. Nunca pegues claves de API, cookies de cuenta ni material privado en un agente en el que no confíes. Consulta [SECURITY.md](../SECURITY.md).
+- **Seguridad del contenido:** si tu idea usa un personaje protegido, una celebridad, una marca, un logo, una canción o el rostro o la voz de una persona real, no lo escondas en otro idioma: reescríbelo con `seedance-copyright` en un equivalente original, con licencia o de posproducción.
+- **Seguridad del agente:** este paquete **no hace ninguna llamada de red ni envía telemetría**; sus scripts son deterministas y funcionan sin conexión. No pegues nunca claves de API, cookies de cuenta ni material privado en un agente en el que no confíes. Consulta [SECURITY.md](../SECURITY.md).
 
-## 7. Profundiza
+## 7. Para profundizar
 
-- `references/directing-engine.md` — lee la escena y elige una sola intención (35 géneros trabajados).
-- `references/capability-map.md` — diseña según las fortalezas del modelo y evita sus límites conocidos.
-- `references/api-workflow.md` — API, proveedores, precios, IDs de modelo (con fecha de fuente).
+- `references/directing-engine.md` — lee la escena y elige una única intención (35 géneros resueltos).
+- `references/capability-map.md` — diseña aprovechando las fortalezas del modelo y esquivando sus límites conocidos.
+- `references/api-workflow.md` — API, proveedores, precios e IDs de modelo (con fecha de la fuente).
 - `references/examples-by-mode.md` — ejemplos de T2V, I2V, V2V, R2V, FLF2V, edición y extensión.
 
 ---
